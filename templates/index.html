@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Classification</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action='/predict' method="POST">
+        <h2>Iris Flower Classification</h2>
+        <img src="path/to/iris_image.png" alt="Iris Flower">
+        <p>Enter the features below to predict the iris flower class:</p>
+        Sepal Length: <input type='text' name='sepal_length'><br>
+        Sepal Width: <input type='text' name='sepal_width'><br>
+        Petal Length: <input type='text' name='petal_length'><br>
+        Petal Width: <input type='text' name='petal_width'><br>
+        <input type='submit' value='Predict'>
+        <p>Class: {{ result }}</p>
+    </form>
+
+</body>
+
+</html>
+
